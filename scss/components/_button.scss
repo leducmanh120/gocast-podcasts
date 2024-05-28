@@ -1,0 +1,17 @@
+.button {
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: #fcfcfc;
+  background: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: calc(22 / 15);
+  &:hover {
+    background: var(--primary-shades-2);
+  }
+  &--icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}

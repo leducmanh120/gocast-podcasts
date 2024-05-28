@@ -1,0 +1,27 @@
+.switch {
+  [type="checkbox"]:checked + .switch__label::before {
+    translate: 12px 0;
+  }
+  [type="checkbox"]:checked + .switch__label {
+    background: var(--primary-gradient);
+  }
+  &__label {
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+    padding: 2px;
+    border-radius: 99px;
+    background: #a5b4cb;
+    transition: ease 0.25s;
+    cursor: pointer;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 100rem;
+      background: #fff;
+      transition: ease 0.2s;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 360px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin screenMax($key) {
+  $breakpoint: map-get($grid-breakpoints, $key);
+  @if ($breakpoint) {
+    @media (max-width: ($breakpoint - 0.02)) {
+      @content;
+    }
+  } @else {
+    @error 'The value "#{$key}" is not in breakpoints list.';
+  }
+}
+
+@mixin screenMin($key) {
+  $breakpoint: map-get($grid-breakpoints, $key);
+  @if ($breakpoint) {
+    @media (min-width: ($breakpoint)) {
+      @content;
+    }
+  } @else {
+    @error 'The value "#{$key}" is not in breakpoints list.';
+  }
+}
+
+@mixin text-truncate($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}

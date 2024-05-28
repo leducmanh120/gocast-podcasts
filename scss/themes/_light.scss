@@ -1,0 +1,46 @@
+html {
+  --primary-color: #6c5dd3;
+  --primary-shades-2: #897ddc;
+  --secondary-color: #ffabc6;
+  --secondary-white-60: #ffd0e0;
+  --tertiary-color: #ff754c;
+  --primary-gradient: linear-gradient(92deg, #415ef4 0.33%, #7141ef 28.14%);
+  --scrollbar-thumb-bg: rgba(0, 0, 0, 0.15);
+  --body-bg: #fff;
+  --heading-color: #1b1d21;
+  --text-color: #a6a7b2;
+
+  // Sidebar
+  --sidebar-border: #f0f3f6;
+  --navbar-title: #8494ab;
+  --navbar-list-border: #e9eef4;
+  --navbar-link: #8494ab;
+  --navbar-link-sm-hover: #f5f5f5;
+  --navbar-icon-1: #e5eaf1;
+  --navbar-icon-2: #a5b4cb;
+
+  // Header
+  --search-box-bg: #f0f3f6;
+  --search-box-text: #1b1d21;
+  --search-box-placeholder: #a6a7b2;
+  --header-act-icon-1: #e5eaf1;
+  --header-act-icon-2: #a5b4cb;
+  --header-act-noti-badge-border: #fff;
+  --header-icon-color: brightness(0) saturate(100%) invert(76%) sepia(6%) saturate(976%)
+    hue-rotate(177deg) brightness(94%) contrast(90%);
+  --header-border: #e4e4e4;
+
+  // Home
+  --host-name: #5f6164;
+  --trending-inner-bg: #f8f8f8;
+  --home-trending-desc: #676a6f;
+  --home-trending-name: #232333;
+  --feed-toggle-text: #5f6164;
+  --feed-item-border: #f0f3f6;
+  --listening-icon-1: #fff;
+  --listening-icon-2: #a6a7b2;
+
+  // Suggested Follows
+  --followed-button-color: #a5b4cb;
+  --followed-button-border: #e5eaf1;
+}

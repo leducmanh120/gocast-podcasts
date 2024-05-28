@@ -1,0 +1,18 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  color: var(--text-color);
+  background: var(--body-bg);
+  transition: color, background;
+  transition-duration: 0.25s;
+}
+
+html.dark .logo {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7475%) hue-rotate(50deg)
+    brightness(109%) contrast(104%);
+}

@@ -1,0 +1,56 @@
+.follow {
+  margin-bottom: 40px;
+  &__creator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+  &__avatar-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--secondary-white-60);
+    border-radius: 6px;
+  }
+  &__avatar {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  &__name {
+    margin-bottom: 4px;
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    line-height: calc(22 / 15);
+    transition: color 0.25s;
+  }
+  &__username {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: calc(19 / 13);
+  }
+  &__btn {
+    padding: 6px 18px;
+    transition: color, border;
+    transition-duration: 0.25s;
+    &--followed {
+      color: var(--followed-button-color);
+      background: transparent;
+      border: 2px solid var(--followed-button-border);
+      &:hover {
+        background: initial;
+      }
+    }
+  }
+}

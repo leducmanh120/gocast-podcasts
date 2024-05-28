@@ -1,0 +1,163 @@
+@use "../abstracts/mixins";
+
+.sidebar {
+  z-index: 3;
+  padding: 48px 30px;
+  border-right: 1px solid var(--sidebar-border);
+  background: var(--body-bg);
+  transition: translate, background, border-right;
+  transition-duration: 0.25s;
+  @include mixins.screenMax(xl) {
+    padding: 24px 8px;
+  }
+  @include mixins.screenMax(sm) {
+    position: fixed;
+    inset: 0 20% 0 0;
+    translate: -100% 0;
+    padding: 40px 0;
+  }
+  &__input:checked ~ .sidebar {
+    translate: 0 0;
+  }
+  &__input:checked ~ .sidebar__overlay {
+    display: block;
+  }
+  &__top {
+    @include mixins.screenMax(sm) {
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 20px;
+      margin-bottom: 30px;
+    }
+  }
+  &__close {
+    display: none;
+    cursor: pointer;
+    @include mixins.screenMax(sm) {
+      display: block;
+    }
+  }
+  &__logo {
+    flex-shrink: 0;
+    padding-left: 20px;
+    @include mixins.screenMax(xl) {
+      width: 60%;
+      padding-left: 0;
+      margin-inline: auto;
+    }
+    @include mixins.screenMax(md) {
+      display: none;
+    }
+    @include mixins.screenMax(sm) {
+      display: block;
+      width: 100%;
+    }
+  }
+  &__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background: rgba(#000, 0.3);
+  }
+}
+
+.navbar {
+  margin-top: 44px;
+  @include mixins.screenMax(xl) {
+    margin-top: 28px;
+  }
+  @include mixins.screenMax(md) {
+    margin-top: 0;
+  }
+  @include mixins.screenMax(sm) {
+    height: calc(100vh - 93px);
+    padding-inline: 10px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  &__title {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: var(--navbar-title);
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 146.154%;
+    transition: color 0.25s;
+    @include mixins.screenMax(xl) {
+      padding-left: 0;
+      text-align: center;
+    }
+    @include mixins.screenMax(sm) {
+      padding-left: 20px;
+      font-size: 1.6rem;
+      text-align: initial;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-block: 26px;
+    transition: border-bottom 0.25s;
+    &:first-child {
+      padding-top: 0;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--navbar-list-border);
+    }
+    @include mixins.screenMax(xl) {
+      padding-block: 16px;
+    }
+  }
+  &__item {
+    --hover-bg: var(--primary-gradient);
+    border-radius: 12px;
+    @include mixins.screenMax(sm) {
+      --hover-bg: var(--navbar-link-sm-hover);
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    border-radius: 12px;
+    line-height: 1;
+    color: var(--navbar-link);
+    transition: color 0.25s;
+    @include mixins.screenMax(xl) {
+      gap: 0;
+      justify-content: center;
+      font-size: 0;
+    }
+    @include mixins.screenMax(sm) {
+      justify-content: initial;
+      font-size: 1.4rem;
+    }
+  }
+  &__item--active,
+  &__link:hover {
+    --navbar-icon-1: #f8f8f8;
+    --navbar-icon-2: #a79ee5;
+    @include mixins.screenMin(sm) {
+      --navbar-link: #fff;
+    }
+    background: var(--hover-bg);
+    [fill^="var(--navbar-icon-1)"] {
+      opacity: 1;
+    }
+    font-weight: 600;
+  }
+  &__item--active {
+    @include mixins.screenMax(sm) {
+      background: inherit;
+    }
+  }
+  &__icon {
+    flex-shrink: 0;
+    @include mixins.screenMax(sm) {
+      display: none;
+    }
+  }
+}

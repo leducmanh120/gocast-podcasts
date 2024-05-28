@@ -1,0 +1,133 @@
+@use "../abstracts/mixins";
+
+.wrapper {
+  max-width: 1440px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 256px minmax(0, 1fr);
+  @include mixins.screenMax(xl) {
+    grid-template-columns: 86px minmax(0, 1fr);
+  }
+  @include mixins.screenMax(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content {
+  --padding-inline: 56px;
+  --gutter: 60px;
+  --main-content-width: calc((100% - var(--gutter)) * 0.6667);
+  display: flex;
+  gap: var(--gutter);
+  padding: 30px var(--padding-inline) 84px;
+  @include mixins.screenMax(xl) {
+    --padding-inline: 24px;
+    padding-block: 10px 28px;
+  }
+  @include mixins.screenMax(xl) {
+    padding-bottom: 109px;
+  }
+}
+
+.main-content {
+  flex-shrink: 0;
+  width: var(--main-content-width);
+  @include mixins.screenMax(lg) {
+    --main-content-width: 100%;
+  }
+}
+
+.explore {
+  background: var(--body-bg);
+  flex-grow: 1;
+  overflow-y: auto;
+  transition: transform, background;
+  transition-duration: 0.25s;
+  @include mixins.screenMax(lg) {
+    position: fixed;
+    inset: 0 0 0 50%;
+    z-index: 4;
+    transform: translateX(100%);
+    padding: 0 24px 36px;
+  }
+  @include mixins.screenMax(sm) {
+    inset: 0;
+    overflow-y: auto;
+  }
+  &__input {
+    &:checked ~ .explore {
+      transform: translateX(0);
+    }
+    &:checked ~ .explore__overlay {
+      display: block;
+    }
+  }
+  &__top {
+    display: none;
+    position: sticky;
+    top: -12px;
+    background: var(--body-bg);
+    padding-block: 20px 8px;
+    margin-bottom: 22px;
+    transition: background 0.25s;
+    @include mixins.screenMax(lg) {
+      display: block;
+    }
+  }
+  &__close {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    @include mixins.screenMax(lg) {
+      display: flex;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #a6a7b2;
+  }
+  &__all {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 1.3rem;
+  }
+  &__show {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100rem;
+    background: var(--primary-gradient);
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+    }
+    @include mixins.screenMax(lg) {
+      display: flex;
+    }
+    @include mixins.screenMax(sm) {
+      bottom: 92px;
+    }
+    &:hover {
+      opacity: 0.9px;
+    }
+  }
+  &__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    background: rgba(#000, 0.3);
+  }
+}

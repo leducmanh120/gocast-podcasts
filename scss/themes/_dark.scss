@@ -1,0 +1,36 @@
+html.dark {
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.15);
+  --body-bg: #242731;
+  --heading-color: #fff;
+
+  // Sidebar
+  --sidebar-border: #373a43;
+  --navbar-title: #5f6164;
+  --navbar-list-border: #373a43;
+  --navbar-link: #ababad;
+  --navbar-link-sm-hover: #32353b;
+  --navbar-icon-1: #676a6f;
+
+  // Header
+  --search-box-bg: #373a43;
+  --search-box-text: #fff;
+  --header-act-icon-1: #676a6f;
+  --header-act-icon-2: #ababad;
+  --header-act-noti-badge-border: #242731;
+  --header-icon-color: brightness(0) saturate(100%) invert(44%) sepia(7%) saturate(297%)
+    hue-rotate(179deg) brightness(90%) contrast(85%);
+  --header-border: #373a43;
+
+  // Home
+  --host-name: #e4e4e4;
+  --trending-inner-bg: #050f16;
+  --home-trending-desc: #a6a7b2;
+  --home-trending-name: #fff;
+  --feed-toggle-text: #e4e4e4;
+  --feed-item-border: #373a43;
+  --listening-icon-2: #373a43;
+
+  // Suggested Follows
+  --followed-button-color: #ababad;
+  --followed-button-border: #373a43;
+}
