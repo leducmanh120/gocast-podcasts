@@ -1,13 +1,5 @@
 @use "../abstracts/mixins";
 
-.home-heading {
-  color: var(--heading-color);
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.5;
-  transition: color 0.25s;
-}
-
 // Popular Hosts
 .host {
   margin-bottom: 20px;
@@ -58,8 +50,10 @@
   }
 }
 
-// Trending banner
-.trending-banner {
+// Banner
+.home .banner {
+  --play-icon-bg: #e5eaf1;
+  --play-icon-color: url(#play-icon-gradient);
   position: relative;
   padding-top: 20px;
   margin-bottom: 62px;
@@ -151,38 +145,12 @@
     }
   }
   &__slider {
-    position: absolute;
-    left: 50%;
-    bottom: -26px;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    @include mixins.screenMax(md) {
-      display: none;
-    }
-  }
-  &__dot {
-    width: 10px;
-    height: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    &--active {
-      border-radius: 100rem;
-      background: var(--secondary-color);
-      > img {
-        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
-        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7475%)
-          hue-rotate(50deg) brightness(109%) contrast(104%);
-      }
-    }
+    --bottom: -26px;
   }
 }
 
-// Feed
-.feed {
+// News feed
+.home .feed {
   &__top {
     --height: 40px;
     display: flex;
@@ -251,7 +219,9 @@
   }
 }
 
-.feed-item {
+.home .feed-item {
+  --play-icon-bg: #fff;
+  --play-icon-color: url(#play-icon-gradient);
   border-radius: 10px;
   border: 1px solid var(--feed-item-border);
   transition: border 0.25s;
@@ -363,7 +333,7 @@
     gap: 4px;
     margin-top: 12px;
     line-height: 1;
-    + .feed-item__meta {
+    + .home-feed-item__meta {
       margin-left: 10px;
     }
   }
@@ -479,6 +449,10 @@
     gap: 6px;
     font-size: 1.3rem;
     font-weight: 400;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
   &__icon {
     width: 16px;
@@ -488,8 +462,11 @@
 }
 
 // Explore: Topics
-div.home-topic {
+.explore div.topic {
   margin-bottom: 30px;
+  .heading {
+    margin-bottom: 0;
+  }
   &__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

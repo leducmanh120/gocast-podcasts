@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
+    white-space: nowrap;
     &:not(:last-child) {
       margin-bottom: 20px;
     }

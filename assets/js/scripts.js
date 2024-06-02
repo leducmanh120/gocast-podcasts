@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Feed item (home page): clicked the action btton
 document.addEventListener("DOMContentLoaded", function () {
-  let buttons = document.querySelectorAll(".feed-item__act-btn");
+  let buttons = document.querySelectorAll(".home-feed-item__act-btn");
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
-      if (button.classList.contains("feed-item__act-btn--clicked")) {
-        button.classList.remove("feed-item__act-btn--clicked");
+      if (button.classList.contains("home-feed-item__act-btn--clicked")) {
+        button.classList.remove("home-feed-item__act-btn--clicked");
       } else {
-        button.classList.add("feed-item__act-btn--clicked");
+        button.classList.add("home-feed-item__act-btn--clicked");
       }
     });
   });

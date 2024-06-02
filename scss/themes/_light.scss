@@ -4,11 +4,14 @@ html {
   --secondary-color: #ffabc6;
   --secondary-white-60: #ffd0e0;
   --tertiary-color: #ff754c;
+  --support-color-2: #ffce73;
   --primary-gradient: linear-gradient(92deg, #415ef4 0.33%, #7141ef 28.14%);
   --scrollbar-thumb-bg: rgba(0, 0, 0, 0.15);
   --body-bg: #fff;
   --heading-color: #1b1d21;
   --text-color: #a6a7b2;
+  --play-icon-bg: #a6a7b2;
+  --play-icon-color: #fff;
 
   // Sidebar
   --sidebar-border: #f0f3f6;
@@ -43,4 +46,12 @@ html {
   // Suggested Follows
   --followed-button-color: #a5b4cb;
   --followed-button-border: #e5eaf1;
+
+  // Trending feed
+  --trending-feed-tab: #1b1d21;
+  --trending-feed-tab-bg: #f0f3f6;
+  --trending-feed-item-shadow: -1px -3px 14px 0px rgba(227, 230, 236, 0.2),
+    -10px 24px 35px 0px rgba(227, 230, 236, 0.25);
+  --trending-feed-more: #1b1d21;
+  --trending-feed-more-bg: #e4e4e4;
 }

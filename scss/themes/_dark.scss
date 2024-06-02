@@ -2,6 +2,7 @@ html.dark {
   --scrollbar-thumb-bg: rgba(255, 255, 255, 0.15);
   --body-bg: #242731;
   --heading-color: #fff;
+  --play-icon-bg: #373a43;
 
   // Sidebar
   --sidebar-border: #373a43;
@@ -28,9 +29,16 @@ html.dark {
   --home-trending-name: #fff;
   --feed-toggle-text: #e4e4e4;
   --feed-item-border: #373a43;
-  --listening-icon-2: #373a43;
 
   // Suggested Follows
   --followed-button-color: #ababad;
   --followed-button-border: #373a43;
+
+  // Trending feed
+  --trending-feed-tab: #a6a7b2;
+  --trending-feed-tab-bg: #373a43;
+  --trending-feed-item-shadow: -1px -3px 14px 0px rgba(15, 20, 39, 0.2),
+    -10px 24px 35px 0px rgba(8, 8, 9, 0.25);
+  --trending-feed-more: #e4e4e4;
+  --trending-feed-more-bg: #373a43;
 }

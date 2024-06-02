@@ -6,8 +6,16 @@
   font-size: 1.5rem;
   font-weight: 600;
   line-height: calc(22 / 15);
+  transition: background 0.25s;
   &:hover {
     background: var(--primary-shades-2);
+  }
+  &--secondary {
+    color: #1b1d21;
+    background: #fff;
+    &:hover {
+      background: #fafbfc;
+    }
   }
   &--icon {
     display: flex;

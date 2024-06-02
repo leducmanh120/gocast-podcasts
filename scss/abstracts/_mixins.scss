@@ -30,6 +30,20 @@ $grid-breakpoints: (
   }
 }
 
+@mixin screenMinMax($min-key, $max-key) {
+  $min-breakpoint: map-get($grid-breakpoints, $min-key);
+  $max-breakpoint: map-get($grid-breakpoints, $max-key);
+  @if ($min-breakpoint and $max-breakpoint) {
+    @media (min-width: $min-breakpoint) and (max-width: ($max-breakpoint - 0.02px)) {
+      @content;
+    }
+  } @else if (not $min-breakpoint) {
+    @error 'The value "#{$min-key}" is not in breakpoints list.';
+  } @else if (not $max-breakpoint) {
+    @error 'The value "#{$max-key}" is not in breakpoints list.';
+  }
+}
+
 @mixin text-truncate($line: 2) {
   display: -webkit-box;
   -webkit-line-clamp: $line;

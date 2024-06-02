@@ -1,31 +1,60 @@
 @use "../abstracts/mixins";
 
 .wrapper {
+  --sidebar-width: 256px;
   max-width: 1440px;
   margin-inline: auto;
   display: grid;
-  grid-template-columns: 256px minmax(0, 1fr);
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   @include mixins.screenMax(xl) {
-    grid-template-columns: 86px minmax(0, 1fr);
+    --sidebar-width: 86px;
   }
   @include mixins.screenMax(sm) {
-    grid-template-columns: 1fr;
+    display: initial;
   }
 }
 
+.container {
+  --header-mobile-height: 72px;
+}
+
 .content {
-  --padding-inline: 56px;
-  --gutter: 60px;
-  --main-content-width: calc((100% - var(--gutter)) * 0.6667);
-  display: flex;
-  gap: var(--gutter);
-  padding: 30px var(--padding-inline) 84px;
+  padding-inline: 56px;
   @include mixins.screenMax(xl) {
-    --padding-inline: 24px;
-    padding-block: 10px 28px;
+    padding-inline: 36px;
   }
-  @include mixins.screenMax(xl) {
-    padding-bottom: 109px;
+  @include mixins.screenMax(md) {
+    padding-inline: 24px;
+  }
+  &#content {
+    @include mixins.screenMinMax(sm, lg) {
+      padding-bottom: 50px;
+    }
+    @include mixins.screenMax(sm) {
+      padding-bottom: 108px;
+    }
+  }
+  &.home {
+    --gutter: 60px;
+    --main-content-width: calc((100% - var(--gutter)) * 0.6667);
+    display: flex;
+    gap: var(--gutter);
+    padding-block: 30px 84px;
+    @include mixins.screenMax(sm) {
+      padding-block: 10px 108px;
+    }
+  }
+  &.trending {
+    padding-block: 36px 55px;
+    @include mixins.screenMax(sm) {
+      padding-top: 14px;
+    }
+  }
+  &.topic {
+    padding-block: 36px 80px;
+    @include mixins.screenMax(sm) {
+      padding-top: 14px;
+    }
   }
 }
 

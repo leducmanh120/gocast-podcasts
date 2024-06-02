@@ -154,12 +154,13 @@
 .header-mobile {
   display: none;
   position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   z-index: 1;
   align-items: center;
   justify-content: space-between;
+  max-width: 100vw;
   padding: 14px 24px;
   border-top: 1px solid var(--header-border);
   background: var(--body-bg);

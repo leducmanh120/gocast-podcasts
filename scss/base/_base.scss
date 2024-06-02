@@ -16,3 +16,19 @@ html.dark .logo {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7475%) hue-rotate(50deg)
     brightness(109%) contrast(104%);
 }
+
+.heading {
+  color: var(--heading-color);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: calc(26 / 24);
+  transition: color 0.25s;
+  &.home {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+}
+
+.desc {
+  line-height: calc(20 / 14);
+}
